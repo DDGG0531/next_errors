@@ -19,7 +19,7 @@ export default function E3() {
   }, []);
   return (
     <div className="min-h-screen">
-      <div>E3: useEffect 中的api回傳值漏key</div>
+      <div>E3: useEffect 中的api回傳值漏key: 正常</div>
       <div>名字：{user.name}</div>
       <div>年紀：{user.age}</div>
     </div>

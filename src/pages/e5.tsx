@@ -11,7 +11,7 @@ export default function E5() {
     <div className="min-h-screen">
       <div>E5: click 造成function噴錯</div>
       <div>{str}</div>
-      <button onClick={() => setStr(123)}>Button</button>
+      <button onClick={() => setStr(formateName("123"))}>Button</button>
     </div>
   );
 }
