@@ -1,0 +1,13 @@
+import { useEffect } from "react";
+
+export default function E1() {
+  useEffect(() => {
+    throw new Error("E1: mounted時出錯");
+  }, []);
+
+  return (
+    <div>
+      <div>E1: mounted時出錯</div>
+    </div>
+  );
+}
