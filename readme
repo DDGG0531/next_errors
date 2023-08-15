@@ -3,7 +3,7 @@
 2. useEffect 中的api噴錯
 3. useEffect 中的api回傳值漏key
 4. useEffect 中的api回傳值格式錯誤: 預期array,回傳數字 
-5. function 有錯
-6. template 上有錯
+5. click 造成function噴錯
+6. click 造成template噴錯
 7. can not read property of undefined
-8. click導致錯誤
+8. click本身噴錯

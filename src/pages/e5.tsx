@@ -7,12 +7,11 @@ export default function E5() {
     return str.toFixed(2);
   }
 
-  const newName = formateName(str);
-
   return (
     <div className="min-h-screen">
-      <div>E5: function 有錯</div>
-      <div>{newName}</div>
+      <div>E5: click 造成function噴錯</div>
+      <div>{str}</div>
+      <button onClick={() => setStr(123)}>Button</button>
     </div>
   );
 }

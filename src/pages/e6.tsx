@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import axios, { isAxiosError } from "axios";
 
 export default function E6() {
-  const [num] = useState(10);
+  const [str, setStr] = useState("13");
 
   return (
     <div className="min-h-screen">
-      <div>E6: template 上有錯</div>
-      <div>{num.toLowerCase()}</div>
+      <div>E6: click 造成template噴錯</div>
+      <div>{str.toLowerCase()}</div>
+      <button onClick={() => setStr(123)}>Button</button>
     </div>
   );
 }
