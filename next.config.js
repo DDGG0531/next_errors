@@ -20,9 +20,12 @@ module.exports = withSentryConfig(
 
     // Suppresses source map uploading logs during build
     silent: true,
-
-    org: "ddgg",
-    project: "next_errors",
+    authToken: process.env.SENTRY_AUTH_TOKEN,
+    org: process.env.SENTRY_ORG,
+    project: process.env.SENTRY_PROJECT,
+    sourcemaps: {
+      filesToDeleteAfterUpload: "./next/**/*.js.map",
+    },
   },
   {
     // For all available options, see:
