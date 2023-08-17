@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios, { isAxiosError } from "axios";
+import axios from "axios";
 
 export default function E4() {
   const [ages, setAges] = useState([]);
@@ -15,13 +15,10 @@ export default function E4() {
     callApi();
   }, []);
   return (
-    <div className="min-h-screen">
-      <div>E4: useEffect 中的api回傳值格式錯誤: 預期array,回傳數字</div>
-      <div>
-        {ages.map((age, index) => (
-          <div key={index}>{age}</div>
-        ))}
-      </div>
+    <div>
+      {ages.map((age, index) => (
+        <div key={index}>{age}</div>
+      ))}
     </div>
   );
 }

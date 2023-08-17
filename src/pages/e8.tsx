@@ -1,15 +1,9 @@
-import { useEffect, useState } from "react";
-import axios, { isAxiosError } from "axios";
+import { Button } from "@/components/ui/button";
 
 export default function E8() {
-  function handleClick(e) {
+  function handleClick() {
     throw new Error("E8: click導致錯誤");
   }
 
-  return (
-    <div className="min-h-screen">
-      <div>E8: click導致錯誤</div>
-      <button onClick={handleClick}>Button</button>
-    </div>
-  );
+  return <Button onClick={handleClick}>Button</Button>;
 }

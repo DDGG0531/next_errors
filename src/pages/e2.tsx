@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios, { isAxiosError } from "axios";
+import axios from "axios";
 
 export default function E2() {
   const [name, setName] = useState("no-name");
@@ -30,10 +30,5 @@ export default function E2() {
 
     callApi();
   }, []);
-  return (
-    <div className="min-h-screen">
-      <div>E2: useEffect 中的api噴錯</div>
-      <div>內容：{name}</div>
-    </div>
-  );
+  return <div>內容：{name}</div>;
 }

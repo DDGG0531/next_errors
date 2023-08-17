@@ -5,9 +5,5 @@ export default function E1() {
     throw new Error("E1: mounted時出錯");
   }, []);
 
-  return (
-    <div>
-      <div>E1: mounted時出錯</div>
-    </div>
-  );
+  return <></>;
 }
