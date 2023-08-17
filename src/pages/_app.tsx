@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import errorCases from "../errorCases";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import page_names from "../page_names.json";
+import { Toaster } from "@/components/ui/toaster";
 
 import {
   Select,
@@ -24,40 +25,44 @@ export default function App({ Component, pageProps, router }: AppProps) {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col items-center p-5">
-      <Select
-        defaultValue={currentPageName}
-        onValueChange={(v) => router.push(v)}
-      >
-        <SelectTrigger className="w-[180px]">
-          <SelectValue />
-        </SelectTrigger>
+    <>
+      <div className="min-h-screen flex flex-col items-center p-5">
+        <Select
+          defaultValue={currentPageName}
+          onValueChange={(v) => router.push(v)}
+        >
+          <SelectTrigger className="w-[180px]">
+            <SelectValue />
+          </SelectTrigger>
 
-        <SelectContent>
-          {filteredPageNames.map((pageName) => (
-            <SelectItem key={pageName} value={pageName}>
-              {pageName == "" ? "Home" : pageName}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+          <SelectContent>
+            {filteredPageNames.map((pageName) => (
+              <SelectItem key={pageName} value={pageName}>
+                {pageName == "" ? "Home" : pageName}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
 
-      {useErrorCaseStructure ? (
-        <div className="p-5">
-          <div className="grid gap-4 w-[500px]">
-            <Alert>
-              <AlertTitle>{currentPageName}</AlertTitle>
-              <AlertDescription>
-                {(errorCases as any)[currentPageName]}
-              </AlertDescription>
-            </Alert>
+        {useErrorCaseStructure ? (
+          <div className="p-5">
+            <div className="grid gap-4 w-[500px]">
+              <Alert>
+                <AlertTitle>{currentPageName}</AlertTitle>
+                <AlertDescription>
+                  {(errorCases as any)[currentPageName]}
+                </AlertDescription>
+              </Alert>
 
-            <Component {...pageProps} />
+              <Component {...pageProps} />
+            </div>
           </div>
-        </div>
-      ) : (
-        <Component {...pageProps} />
-      )}
-    </div>
+        ) : (
+          <Component {...pageProps} />
+        )}
+      </div>
+
+      <Toaster />
+    </>
   );
 }
