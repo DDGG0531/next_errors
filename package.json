@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "yarn run create_page_names && next dev",
-    "build": "create_page_names && next build",
+    "build": "yarn run create_page_names && next build",
     "start": "next start",
     "lint": "next lint",
     "create_page_names": "sh create_page_names.sh"
