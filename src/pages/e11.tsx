@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import * as Sentry from "@sentry/nextjs";
 import { useToast } from "@/components/ui/use-toast";
 
-export default function E10() {
+export default function E11() {
   const { toast } = useToast();
 
   async function handleClick() {
