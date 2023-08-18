@@ -8,11 +8,11 @@ export default function E12() {
   async function handleClick() {
     Sentry.configureScope((scope) => {
       scope.setExtras({
-        time: `${time} ms`,
+        [time]: `${time} ms`,
       });
 
       Sentry.setContext("detail", {
-        time: `${time} ms`,
+        [time]: `${time} ms`,
       });
 
       const error = new Error("E14 error");
