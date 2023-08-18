@@ -12,6 +12,7 @@ const errorCases = {
   e11: "post api body 錯誤",
   e12: "api出錯後,先記sentry,再拋出error一次",
   e13: "相對完美的錯誤處理,呼叫端catch非axios錯誤或指定axios錯誤．指定axios錯誤：使用transformRequest，並在catch做處理",
+  e14: "模仿後端api的錯誤捕捉方式",
 };
 
 export default errorCases;
