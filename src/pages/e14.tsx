@@ -6,7 +6,7 @@ export default function E12() {
   const [time, setTime] = useState(0);
 
   async function handleClick() {
-    Sentry.configureScope((scope) => {
+    Sentry.withScope((scope) => {
       scope.setExtras({
         [time]: `${time} ms`,
       });
