@@ -23,10 +23,16 @@ export default function E12() {
     });
   }
 
+  async function handleClick2() {
+    const error = new Error("E14 error 2");
+    Sentry.captureException(error);
+  }
+
   return (
     <>
       <h1>{time}</h1>
       <Button onClick={handleClick}>Button</Button>
+      <Button onClick={handleClick2}>Button2</Button>
     </>
   );
 }
