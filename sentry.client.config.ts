@@ -27,4 +27,7 @@ Sentry.init({
       blockAllMedia: true,
     }),
   ],
+
+  // 方便在 Sentry 上看到 Api 請求的 payload足夠深
+  normalizeDepth: 5,
 });

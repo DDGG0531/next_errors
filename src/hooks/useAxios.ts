@@ -37,7 +37,16 @@ export function useInitAxios() {
 
           // Sentry.captureException(error);
           // 下面這樣寫：比較好看出錯誤點
-          Sentry.captureException(new Error(`${httpStatusCode}: ${message}`));
+
+          console.log("error!!", error);
+
+          Sentry.withScope((scope) => {
+            scope.setContext("API Config", {
+              data: JSON.parse(error.config?.data),
+            });
+
+            Sentry.captureException(new Error(`${httpStatusCode}: ${message}`));
+          });
 
           return Promise.reject(error);
         }
