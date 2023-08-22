@@ -5,6 +5,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import page_names from "../page_names.json";
 import { Toaster } from "@/components/ui/toaster";
 import { AxiosContext, useInitAxios } from "@/hooks/useAxios";
+import Script from "next/script";
 
 import {
   Select,
@@ -29,6 +30,19 @@ export default function App({ Component, pageProps, router }: AppProps) {
 
   return (
     <>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-3N7RHFYQ4G"
+      ></Script>
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-3N7RHFYQ4G');
+        `}
+      </Script>
       <AxiosContext.Provider value={instance}>
         <div className="min-h-screen flex flex-col items-center p-5">
           <Select
