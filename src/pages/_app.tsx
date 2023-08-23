@@ -47,7 +47,10 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <div className="min-h-screen flex flex-col items-center p-5">
           <Select
             defaultValue={currentPageName}
-            onValueChange={(v) => router.push(v)}
+            onValueChange={(v) => {
+              if (v == "") v = "/";
+              router.push(v);
+            }}
           >
             <SelectTrigger className="w-[180px]">
               <SelectValue />
